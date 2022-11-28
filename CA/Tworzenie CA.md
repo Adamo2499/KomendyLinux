@@ -1,20 +1,15 @@
 # Tworzenie CA
 
-Pliki potrzebne do stworzenia CA (z pliku /etc/ssl/openssl.cnf)
-
-![Pliki potrzebne do CA](pliki_potrzebne_do_CA.jpg)
-
 ```bash
-more /etc/ssl/openssl.cnf # przejrzenie pliku konfiguracyjnego OpenSSL (przydatne jeżeli się o czymś zapomni / w ramach sprawdzenia)
-openssl genrsa -des3 -out ca_klient.key 2048 # wygenerowanie klucza prywatnego dla klienta (2048 bitów, algorytm DES; typp algorytmu i długość może być inna, tak samo nazwa)
-openssl req -new -x509 -days 365 -key ca_client.key -out ca_client.crt # wygenerowanie samopodpisanego klucza klucza za pomocą algorytmu X509
-openssl genrsa -des3 -out ca_server.key 1024 # wygenerowanie klucza dla serwera
-openssl req -new -key ca_server.key -out ca_server.csr # wygenerowanie requesta o podpisanie klucza (w czasie wprowadzanie CommonName trzeba wprowadzić pełny adres serwisu)
- cp ca_klient.key ~/CA/private/ #skopiowanie klucza klienta do pliku
- mv klient.crt ~/CA/signed_cert # przeniesienie wygenerowanego certyfikatu do odpowiedniego folderu
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 > key1 # Generowanie klucza i zapisywnaie go w pliku key
+openssl req -new -rsa256 -key key1 -out certificate1 # Generowanie prośby o podpis na bazie klucza w pliku key i zapisanie go w pliku certificate
+openssl req -x509 -newkey rsa:4096 -days 810 -keyout key2 -out certificate2 # Generowanie klucza RSA wraz z własnoręczym podpisaniem certyfikatu i zapisanie klucza w pliku key i certyfikatu w pliku certificate 
+openssl x509 -text -in certificate #  Sprawdzenie  zawartości pliku certificate
+openssl x509 -req -in certificate1 -CA certificate2 -CAkey key2 -CAcreateserial -out podpisanyCertyfikat.crt -days 500 -sha256 # Podpisanie certyfikatu
 ```
 
-Jeżeli wszystko poszło OK, to można wygererowany certyfikat ściągnąć poprzez WinSCP / polecenie SCP na Windowsa i powinien zostać poprawnie rozpoznany
+Jeżeli wszystko poszło OK, to można wygererowany certyfikat ściągnąć poprzez WinSCP / polecenie SCP na Windowsa.
+Po ściągnięciu można zainstalować certyfikat i póżniej sprawdzić poprawność zainstalowania używając certmgr.msc > Pośrednie urzędy certyfikacji > Certyfikaty i tam powinien być nasz certyfikat
 
 ## Przydatne linki
 

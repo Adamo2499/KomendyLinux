@@ -43,20 +43,13 @@
    40  chmod g-w . # odebranie grupie upranień do zapisu w danym folderze
    41  chmod g+w . # nadanie grupie upranień do zapisu w danym folderze
    42  ls -l
-   43  setfacl -d -m group:students:wx . 
+   43  setfacl -d -m group:students:wx . # nadanie grupie students domyślnych uprawnień do zapisu i wykonania w aktualnym folderze
    44  getfacl katalog –-omit-header
    45  getfacl . –-omit-header
    46  mkdir ~/public
    47  setfacl g:students:wx 
-   48  setfacl -m g:students:wx
-   49  setfacl -m g:students:wx .
-   50  setfacl -m g:stuff:rwx .
+   49  setfacl -m g:students:wx . # nadanie grupie students uprawnień do zapisu i wykonania w aktualnym folderze
    51  setfacl -m g:staff:rwx .
    52  clear
    53* touch /home/fbej/test_folder/testABie
-   54  logout
-   55  last
-   56  logout
-   57  logout
-   58  history
 ```

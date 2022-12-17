@@ -18,7 +18,16 @@ network:
             dhcp4: true
         enp0s8:
             addresses:
-            - 192.168.0.101/24
+            - 192.168.0.101/24 # statyczny adres IP wraz z skróconą maską
             # gateway: 192.168.0.1 # adres bramy
             nameservers: {} # adresy serwerów DNS
+```
+
+Wygenerowanie i dodanie kluczy SSH:
+
+```bash
+    ssh-keygen -t rsa # wygenerowanie kluczy SSH na podstawie algorytmu RSA
+    file ~/.ssh/id_rsa # sprawdzenie poprawności utworzenia klucza
+    ssh-copy-id -i id_rsa remote-user@server-ip # skopiowanie kluczy na serwer
+    ssh remote-user@server-ip # zalogowanie się poprzez SSH do serwera
 ```

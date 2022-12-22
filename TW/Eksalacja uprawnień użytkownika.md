@@ -1,4 +1,4 @@
-# Eksalacja uprawnień użytkownika (nielegalna!)
+# Eskalacja uprawnień użytkownika (nielegalna!)
 
 Testowanie uprawnień i tworzenie pliku dockerfile
 

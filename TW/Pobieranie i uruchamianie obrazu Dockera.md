@@ -1,5 +1,14 @@
 # Pobieranie i uruchamianie obrazu Dockera
 
+Sposób I: Wykorzystanie gotowego skryptu autorstwa [Talandar99](https://github.com/Talandar99)
+
+```bash
+    git clone https://github.com/Talandar99/shellfish.git # sklonowanie repozytorium
+    ./run_docker_portainer.sh # uruchomienie skryptu
+```
+
+Sposób II: Manualna instalacja (na podstawie dokumentacji)
+
 ```bash
 # Portainer to tylko przykładowy obraz
 docker pull portainer # pobieranie obrazu

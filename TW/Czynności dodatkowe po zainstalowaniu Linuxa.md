@@ -41,8 +41,22 @@ sudo useradd user # dodanie użytkownika user
 Wygenerowanie i dodanie kluczy SSH:
 
 ```bash
+    ip a # sprawdzenie adresu IP maszyny wirtualnej
     ssh-keygen -t rsa # wygenerowanie kluczy SSH na podstawie algorytmu RSA
     file ~/.ssh/id_rsa # sprawdzenie poprawności utworzenia klucza
     ssh-copy-id -i id_rsa remote-user@server-ip # skopiowanie kluczy na serwer
     ssh remote-user@server-ip # zalogowanie się poprzez SSH do serwera
 ```
+Na komputerze fizycznym (hoście):
+Na WinSCP zalogować się do swojej maszyny wirtualnej swoim logiem i hasłem.  
+Jako, że plik jest ukryty, to należy włączyć pokazywanie ukrytych opcji:  
+Options->Preferences->Panels->Show hidden files  
+Ściągamy pliki id_ecdsa na nasz komputer.  
+Rozłączamy się z WinSCP.  
+Włączamy PuTTYgen  
+Przy opcji "Load an existing private key file" wybieramy nasz plik id_rsa (wcześniej trzeba zamienić wybór z plików ppk na Wszystkie Pliki)  
+Zapisujemy prywatny klucz klikając na Save Private Key i wskazując dowolną lokalizację (będzie miał on rozszerzenie .ppk)  
+Przechodzimy do PuTTY -> SSH -> Auth  
+W ostatniej opcji wybieramy zapisany wcześniej klucz ppk  
+Wracamy do okna Session i w polu Host Name wpisujemy remote-user@remote-ip-address(gdzie remote user to nazwa usera na maszynie wirtualnej a remote-ip-address to adres IP maszyny wirtualnej
+Wciskamy open i po chwili powinniśmy być zalogowani do maszyny wirtualnej bez podawania hasła

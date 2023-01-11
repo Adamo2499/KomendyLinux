@@ -31,7 +31,7 @@
 - ### cat dajroot/etc/sudoers
 
 ## Wychodzimy z containera
-- ### exirt
+- ### exit
 
 ## Robimy przejecie roota
 - ### sudo su

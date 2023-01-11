@@ -47,6 +47,7 @@ Wygenerowanie i dodanie kluczy SSH:
     ssh-copy-id -i id_rsa remote-user@server-ip # skopiowanie kluczy na serwer
     ssh remote-user@server-ip # zalogowanie się poprzez SSH do serwera
 ```
+
 Na komputerze fizycznym (hoście):
 Na WinSCP zalogować się do swojej maszyny wirtualnej swoim logiem i hasłem.  
 Jako, że plik jest ukryty, to należy włączyć pokazywanie ukrytych opcji:  

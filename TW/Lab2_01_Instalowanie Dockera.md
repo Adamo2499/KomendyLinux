@@ -12,7 +12,7 @@ Sposób I: Wykorzystanie gotowego skryptu autorstwa [Talandar99](https://github.
 
 ```bash
     git clone https://github.com/Talandar99/shellfish.git # sklonowanie repozytorium
-    cd shellfish # przejście do folderu z wypakowanym repozytorium
+    cd shellfish/docker # przejście do folderu z wypakowanym repozytorium
     sudo ./install_docker_ubuntu.sh # uruchomienie skryptu
     sudo reboot # restart serwera
     sudo docker run hello-world # uruchomienie testowego obrazu Dockera

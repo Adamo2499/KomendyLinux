@@ -36,6 +36,7 @@ Dodanie nowego użytkownika
 
 ```bash
 sudo useradd user # dodanie użytkownika user
+sudo passwd user # nadanie hasła dla nowego użytkownika
 ```
 
 Wygenerowanie i dodanie kluczy SSH:

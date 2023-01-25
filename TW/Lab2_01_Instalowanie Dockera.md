@@ -34,6 +34,10 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo apt-get update
 # Instalacja Docker Engine, containterd i Docker Compose
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+# Dodanie użytkownika do grupy docker
+sudo usermod -a -G docker $user 
+# Restart potrzebny do poprawnego przydzielenia użytkownika
+sudo reboot
 # Sprawdzenie poprawności instalacji Dockera
-sudo docker run hello-world
+docker run hello-world
 ```

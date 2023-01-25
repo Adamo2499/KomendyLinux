@@ -4,15 +4,13 @@
 
 ```bash
     git clone https://github.com/Talandar99/shellfish.git # sklonowanie plików repozytorium do folderu shellfish
-    cd ./shellfish # przejście do folderu z rozpakowanym repozytorium
-    git pull # aktualizacja lokalnego repozytorium
-    cd ./prometheus_docker # przejście do folderu z skryptami
+    cd ./shellfish/prometheus_docker #  przejście do folderu z skryptami w rozpakowanym repozytorium 
 ```
 
 ## Master
 
 ```bash
-    sudo ./prometheus_monitoring_full_setup_master_daemon.sh # uruchpmienie skryptu z pełną instalacją oraz uruchomieniem Graphany oraz Prometheusa
+    sudo ./full_setup_master.sh # uruchpmienie skryptu z pełną instalacją oraz uruchomieniem Graphany oraz Prometheusa
     docker ps # wyświetlenie uruchomionych obrazów Dockera
     ip a # sprawdzenie adresów IP maszyny 
 ```
@@ -20,7 +18,7 @@
 ## Slave
 
 ```bash
-    sudo ./prometheus_monitoring_full_setup_slave_daemon.sh # uruchpmienie skryptu z pełną instalacją oraz uruchomieniem Graphany oraz Prometheusa
+    sudo ./full_setup_slave.sh # uruchpmienie skryptu z pełną instalacją oraz uruchomieniem Graphany oraz Prometheusa
     docker ps # wyświetlenie uruchomionych obrazów Dockera
     ip a # sprawdzenie adresów IP maszyny 
 ```

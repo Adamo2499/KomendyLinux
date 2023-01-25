@@ -10,6 +10,7 @@ getent group | grep docker # sprawdzenie grupy docker
 getent group | grep user # sprawdzenie grupy user
 sudo bash # próba uruchomemia programu jako root (weryfikacja poziomu uprawnień)
 mkdir /home/user/folder # utworzenie katalogu roboczego
+cd /home/user/folder
 nano Dockerfile # otworzenie pliku dockerfile w edytorze nano (jeżeli nie istnieje, to zostanie utworzony)
 ```
 

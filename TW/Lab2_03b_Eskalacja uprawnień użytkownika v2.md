@@ -4,7 +4,7 @@
 
 - ### mkdir /home/podadmin/dajroot
 - ### cd /home/podadmin/dajroot
-- ### nano dockerfile
+- ### nano Dockerfile
     
     FROM dockette/wheezy
     ENV WORKDIR /dajroot

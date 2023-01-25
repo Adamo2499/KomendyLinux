@@ -45,6 +45,7 @@ Wygenerowanie i dodanie kluczy SSH:
     ip a # sprawdzenie adresu IP maszyny wirtualnej
     ssh-keygen -t rsa # wygenerowanie kluczy SSH na podstawie algorytmu RSA
     file ~/.ssh/id_rsa # sprawdzenie poprawności utworzenia klucza
+    cd ~/.ssh # przejście do folderu z utworzonym kluczem
     ssh-copy-id -i id_rsa remote-user@server-ip # skopiowanie kluczy na serwer
     ssh remote-user@server-ip # zalogowanie się poprzez SSH do serwera
 ```

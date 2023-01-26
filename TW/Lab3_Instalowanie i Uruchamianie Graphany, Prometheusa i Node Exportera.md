@@ -9,7 +9,7 @@
 ## Instalacja i konfiguracja Grafany (tylko maste
 
 ```bash
- 
+   docker pull grafana/grafana-oss # ściągniecie najnowszego obrazka
     
 ```
 
@@ -36,7 +36,7 @@ W polu URL w kategorii HTTP wpisujemy adres maszyny z której chcemy zczytywać 
 
 Zjeżdzamy na dół strony i klikamy Save and Test. Jeżeli otrzymamy komunikat "Data source is working" to znaczy, że wszystko działa prawidłowo.
 
-Wracamy na samą górę, przechodzimy do zakładki Dashboards i importujemy wszystkie 3.
+Wracamy na samą górę, przechodzimy do zakładiiki Dashboards i importujemy wszystkie 3.
 
 Wracamy do zakładki Settings, zjeżdzamy na dół strony i klikamy Save and Test.
 

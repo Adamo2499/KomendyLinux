@@ -3,25 +3,15 @@
 ## Skorzystanie z skryptów
 
 ```bash
-    git clone https://github.com/Talandar99/shellfish.git # sklonowanie plików repozytorium do folderu shellfish
-    cd ./shellfish/prometheus_docker #  przejście do folderu z skryptami w rozpakowanym repozytorium 
+    git clone https://github.com/Talandar99/shellfish
 ```
 
-## Master
+## Instalacja i konfiguracja Grafany (tylko maste
 
 ```bash
-    sudo ./full_setup_master.sh # uruchpmienie skryptu z pełną instalacją oraz uruchomieniem Graphany oraz Prometheusa
-    docker ps # wyświetlenie uruchomionych obrazów Dockera
-    ip a # sprawdzenie adresów IP maszyny 
-```
+    
+``$
 
-## Slave
-
-```bash
-    sudo ./full_setup_slave.sh # uruchpmienie skryptu z pełną instalacją oraz uruchomieniem Graphany oraz Prometheusa
-    docker ps # wyświetlenie uruchomionych obrazów Dockera
-    ip a # sprawdzenie adresów IP maszyny 
-```
 
 ## Testowanie Prometheusa
 

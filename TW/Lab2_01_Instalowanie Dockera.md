@@ -35,9 +35,10 @@ sudo apt-get update
 # Instalacja Docker Engine, containterd i Docker Compose
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 # Dodanie użytkownika do grupy docker
-sudo usermod -a -G docker $user 
+sudo usermod -a -G docker $USER # zmienna środowiskowa
 # Restart potrzebny do poprawnego przydzielenia użytkownika
 sudo reboot
 # Sprawdzenie poprawności instalacji Dockera
 docker run hello-world
 ```
+

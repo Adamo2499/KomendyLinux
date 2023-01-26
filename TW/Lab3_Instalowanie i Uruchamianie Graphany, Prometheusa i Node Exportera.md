@@ -1,11 +1,41 @@
 # Instalowanie Grafany, Prometheusa i Node Exportera
 
-## Instalacja i konfiguracja Grafany (tylko maste
+## Instalacja i konfiguracja Grafany (tylko master)
 
 ```bash
    docker pull grafana/grafana-oss # ściągniecie najnowszego obrazka
 ```
+
+## Instalacja i konfiguracja Node Exportera
+
+```bash
+   mkdir node_exporter
+   cd node_exporter
+   nano docker-compose.yml
+```
+```yaml
+services: 
+  node-exporter: 
+    image: prom/node-exporter 
+    container_name: node-exporter 
+    volumes: 
+      - /proc:/host/proc:ro 
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro 
+    command: 
+      - --path.procfs=/host/proc 
+      - --path.sysfs=/host/sys 
+      - --collector.filesystem.ignored-mount-points=\"^/(sys|proc|dev|host|etc)(\$\$|/)\" 
+    ports: 
+      - 9100:9100 
+```
+```bash
+   docker compose up -d node-exporter
+   curl http://localhost:9100/metrics # przetestowanie działania 
+```
+
 ## Instalacja i konfiguracja Prometeusza
+
 ```bash
  mkdir prometheus
  cd ./prometheus
@@ -31,10 +61,20 @@ scrape_configs:
     static_configs:
       - targets: ['192.168.56.102:9100']
 ```
+```bash
+docker build -t myprometheus . # zbudowanie obrazu myprometheus
+docker run -d -p 9090:9090 myprometheus # uruchomienie obrazu myprometheus jak daenona na porcie 9090
+```
+
+## Testowanie Node Exportera
+
+Aby uruchomić Prometeusza w przeglądarce należy wpisać w przeglądarce adres:
+
+<http://ip_maszyny:9100>
 
 ## Testowanie Prometheusa
 
-Aby uruchomić Graphane w przeglądarce należy w```bashkkpisać w przeglądarce adres:
+Aby uruchomić Prometeusza w przeglądarce należy wpisać w przeglądarce adres:
 
 <http://ip_maszyny:9090>
 

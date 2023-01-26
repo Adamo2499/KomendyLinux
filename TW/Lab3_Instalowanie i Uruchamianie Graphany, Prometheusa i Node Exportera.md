@@ -1,22 +1,40 @@
 # Instalowanie Grafany, Prometheusa i Node Exportera
 
-## Skorzystanie z skryptów
-
-```bash
-    git clone https://github.com/Talandar99/shellfish
-```
-
 ## Instalacja i konfiguracja Grafany (tylko maste
 
 ```bash
    docker pull grafana/grafana-oss # ściągniecie najnowszego obrazka
-    
 ```
-
+## Instalacja i konfiguracja Prometeusza
+```bash
+ mkdir prometheus
+ cd ./prometheus
+ nano Dockerfile
+```
+```Dockerfile
+FROM prom/prometheus
+COPY prometheus.yml /etc/prometheus/
+CMD [ "--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus" ]
+```
+```bash
+nano docker-compose.yml
+```
+```yaml
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['192.168.56.102:9090']
+  - job_name: 'node'
+    static_configs:
+      - targets: ['192.168.56.102:3000']
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['192.168.56.102:9100']
+```
 
 ## Testowanie Prometheusa
 
-Aby uruchomić Graphane w przeglądarce należy wpisać w przeglądarce adres:
+Aby uruchomić Graphane w przeglądarce należy w```bashkkpisać w przeglądarce adres:
 
 <http://ip_maszyny:9090>
 

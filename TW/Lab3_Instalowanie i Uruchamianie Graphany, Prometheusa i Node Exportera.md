@@ -47,7 +47,7 @@ COPY prometheus.yml /etc/prometheus/
 CMD [ "--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus" ]
 ```
 ```bash
-nano docker-compose.yml
+nano prometheus.yml
 ```
 ```yaml
 scrape_configs:

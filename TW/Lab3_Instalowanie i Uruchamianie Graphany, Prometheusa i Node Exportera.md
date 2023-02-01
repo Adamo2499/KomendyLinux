@@ -50,13 +50,16 @@ CMD [ "--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prom
 nano prometheus.yml
 ```
 ```yaml
+# W targets ustawiamy adresy IP maszyny, na której pracujemy
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['192.168.56.102:9090']
+  # Fragment tylko dla mastera
   - job_name: 'node'
     static_configs:
       - targets: ['192.168.56.102:3000']
+  # Koniec fragmentu tylko dla masteara
   - job_name: 'node_exporter'
     static_configs:
       - targets: ['192.168.56.102:9100']

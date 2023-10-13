@@ -15,13 +15,14 @@ nano Dockerfile # otworzenie pliku dockerfile w edytorze nano (jeżeli nie istni
 ```
 
 Struktura pliku Dockerfile:
+
     - FROM debian:wheezy # żródłowy obraz OSa
     - ENV WORKDIR /folder # utworzenie zmiennej środowiskowej
     - RUN mkdir -p $WORKDIR # punkt montowania systemu plików
     - VOLUME $WORKDIR # ustawiemie woluminu
     - WORKDIR $WORKDIR # ustawienie przestrzeni roboczej
-
-Dockerfile:
+    
+Kod do Dockerfile: (bez komentarzy)
 
 ```docker
     FROM debian:wheezy

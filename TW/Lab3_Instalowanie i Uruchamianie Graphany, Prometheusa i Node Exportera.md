@@ -3,7 +3,7 @@
 ## Instalacja i konfiguracja Grafany (tylko master)
 
 ```bash
-   docker pull grafana/grafana-oss # ściągniecie najnowszego obrazka
+   docker pull grafana/grafana-oss # ściągniecie najnowszego obrazu
 ```
 
 ## Instalacja i konfiguracja Node Exportera
@@ -66,7 +66,7 @@ scrape_configs:
 ```
 ```bash
 docker build -t myprometheus . # zbudowanie obrazu myprometheus
-docker run -d -p 9090:9090 myprometheus # uruchomienie obrazu myprometheus jak daenona na porcie 9090
+docker run -d -p 9090:9090 myprometheus # uruchomienie obrazu myprometheus jako daenona na porcie 9090
 ```
 
 ## Testowanie Node Exportera
